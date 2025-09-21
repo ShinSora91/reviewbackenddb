@@ -1,0 +1,37 @@
+# Java (Maven/Gradle)
+
+# 컴파일된 클래스 파일
+*.class
+
+# 빌드 결과물
+target/
+build/
+out/
+
+# 로그 파일
+*.log
+
+# IDE 설정
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# 패키징된 파일
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
