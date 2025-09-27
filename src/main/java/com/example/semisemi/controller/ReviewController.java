@@ -16,7 +16,7 @@ import java.util.List;
 @Slf4j
 @CrossOrigin(
     origins = {"http://localhost:3000"},
-    methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PATCH,RequestMethod.OPTIONS},
+    methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT,RequestMethod.OPTIONS},
     allowedHeaders = "*"
 )
 public class ReviewController {
@@ -37,10 +37,18 @@ public class ReviewController {
 
   @GetMapping("/delete")
   public ResponseEntity<List<ReviewDTO>> delete(@RequestParam() Long id){
+    log.info("리뷰가 삭제되었습니다 {}", id);
     service.delete(id);
     List<ReviewDTO> list = new ArrayList<>();
     service.list().forEach(i->list.add(i));
 
     return ResponseEntity.ok(list);
+  }
+  @PutMapping("/update")
+  public ResponseEntity<String> update(@RequestBody ReviewDTO dto){
+    log.info("리뷰가 수정되었습니다 {}", dto);
+    service.update(dto);
+
+    return ResponseEntity.ok("성공");
   }
 }
