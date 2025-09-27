@@ -18,6 +18,8 @@
 --
 -- Table structure for table `review_tbl`
 --
+create database mysql_example;
+use mysql_example;
 
 DROP TABLE IF EXISTS `review_tbl`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -41,3 +43,6 @@ CREATE TABLE `review_tbl` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-09-21 21:34:17
+
+
+select * from `review_tbl`;
